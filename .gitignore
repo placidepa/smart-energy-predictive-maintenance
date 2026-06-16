@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# C++/Arduino (ESP32)
+*.elf
+*.bin
+build/
+
+# ML Data
+ml_engine/data/*
+!ml_engine/data/.keep
+
+# OS generated files
+.DS_Store
+Thumbs.db
