@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  influxdb:
+    image: influxdb:2.0
+    container_name: factory-influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: factory-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: always
+
+volumes:
+  influxdb-data:
+  grafana-data:
